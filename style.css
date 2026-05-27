@@ -396,6 +396,7 @@ nav {
     border-radius: 15px;
     padding: 40px 30px;
     overflow: hidden;
+    position: relative;
 }
 .cta-card h3 { color: rgb(216, 255, 225); margin: 10px 0; }
 .cta-img {
