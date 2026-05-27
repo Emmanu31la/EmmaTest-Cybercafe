@@ -283,11 +283,10 @@ nav {
     display: flex;
     gap: 8px;
 }
-
 .link-green {
     color: var(--primary-green);
     font-weight: 600;
-    display: inline-flex;
+    display: inline-block;
     margin-top: 10px;
 }
 
