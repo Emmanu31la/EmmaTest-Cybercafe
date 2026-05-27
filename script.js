@@ -86,3 +86,27 @@ document.getElementById('prevTestimonial').addEventListener('click', () => {
 window.addEventListener('resize', renderTestimonials);
 
 renderTestimonials();
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('i');
+const body = document.body;
+
+const currentTheme = localStorage.getItem('theme');
+
+
+if (currentTheme === 'dark') {
+    body.classList.add('dark-theme');
+    themeIcon.classList.replace('fa-moon', 'fa-sun'); 
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    
+    if (body.classList.contains('dark-theme')) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+});

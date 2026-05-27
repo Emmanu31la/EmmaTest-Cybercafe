@@ -10,14 +10,19 @@
     </head>
     <body id="home">
 
-        <header id="header">
-            <div class="nav-container">
-                <a href="#home" class="logo">
-                    <img src="images\logo.webp" alt="EmmaTest Cybercafe Logo">
-                </a>
+       <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="images/logo.webp" alt="EmmaTest Cybercafe Logo" id="site-logo">
+            </a>
+            
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <div class="menu-icon" id="menu-icon">
                     <i class="fas fa-bars"></i>
                 </div>
+            </div>
                 <nav id="navbar">
                     <ul class="nav-links">
                         <li><a href="#home" class="nav-link">Home</a></li>
