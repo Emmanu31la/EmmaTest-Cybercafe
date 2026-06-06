@@ -3,25 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request a Service - EmmaTest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" href="favicon.ico">
-    <link rel="manifest" href="site.webmanifest">
-    <style>
-        body { font-family: 'Inter', sans-serif; text-align: center; padding: 100px 20px; background-color: #F8F9FA; }
-        .box { background: white; max-width: 500px; margin: auto; padding: 40px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        h1 { color: #095C2B; }
-        a { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #FFC700; color: #222; text-decoration: none; border-radius: 6px; font-weight: 600; }
-    </style>
+    <title>Request a Service - EmmaTest Cybercafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="box">
-        <h1>Submit a Request</h1>
-        <p>This page is currently under development. Here, users will be able to fill out a form for a specific service.</p>
-        <a href="index.html">Back to Home</a>
-    </div>
+<body id="home" class="bg-light">
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="EmmaTest Cybercafe Logo" id="site-logo">
+            </a>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-icon" id="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <nav id="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="service-details.html" class="nav-link">Services</a></li>
+                    <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#footer" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="https://wa.me/2348055755066" target="_blank" rel="noopener" class="btn btn-primary wa-link">
+                    <i class="fab fa-whatsapp"></i> Chat for price
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="grid-container form-layout-grid">
+            
+            <div class="form-container">
+                <span class="badge mb-2">ONLINE REQUEST FORM</span>
+                <h1>Request a <span class="text-green">Service</span></h1>
+                <p class="mb-4">Fill in your details and we'll process your request quickly and professionally.</p>
+
+                <div class="disclaimer-banner hover-float mb-4">
+                    <i class="fas fa-info-circle text-yellow" style="font-size: 1.5rem;"></i>
+                    <p class="text-small"><strong>Delivery Notice:</strong> In-person delivery of hardcopies is only available in certain areas of <strong>Ogbomoso, Nigeria</strong>. Requested deliveries to any other part of the country will incur additional state-to-state delivery costs and must be picked up at the closest park.</p>
+                </div>
+
+                <form id="serviceForm" class="cyber-form" novalidate>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name <span class="text-red">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="far fa-user"></i>
+                                <input type="text" id="fullName" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="text-red">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="tel" id="phoneNumber" placeholder="08012345678" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address (Optional)</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" id="emailAdd" placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Category <span class="text-red">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-layer-group"></i>
+                                <select id="serviceCategory" required title="Select a service category">
+                                    <option value="" disabled selected>Select a category</option>
+                                    <option value="education">Education Services</option>
+                                    <option value="nysc">NYSC Services</option>
+                                    <option value="document">Document & Printing</option>
+                                    <option value="identity">Identity & Govt. Services</option>
+                                    <option value="utility">Utility & Subscriptions</option>
+                                    <option value="additional">Additional Services</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Type <span class="text-red">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-list-ul"></i>
+                            <select id="serviceType" required disabled title="Select a service type">
+                                <option value="" disabled selected>Please select a category first</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Request Description <span class="text-red">*</span></label>
+                        <textarea id="requestDesc" rows="4" placeholder="Describe exactly what you need..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Files (Optional) Only one file per Submission is allowed</label>
+                        <div class="file-upload-box hover-float">
+                            <i class="fas fa-cloud-upload-alt text-green icon-large"></i>
+                            <p><strong>Click to upload (10 MB max)</strong> or drag and drop</p>
+                            <p class="text-small text-gray">Photos, Documents, Receipts, etc.(Max 1 file)</p>
+                            <input type="file" id="fileUpload" multiple title="Upload Files" aria-label="Upload Files">
+                            <div id="fileNameDisplay" style="margin-top: 10px; font-size: 0.85rem; color: var(--primary-green);"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-4" id="deliveryGroup">
+                        <label>Preferred Delivery Type <span class="text-red">*</span></label>
+                        <div class="radio-cards">
+                            <label class="radio-card hover-float">
+                                <input type="radio" name="deliveryType" value="Softcopy Only" required>
+                                <div class="rc-content">
+                                    <strong>Softcopy Only</strong>
+                                    <p class="text-small">Receive via WhatsApp/Email</p>
+                                </div>
+                            </label>
+                            <label class="radio-card hover-float">
+                                <input type="radio" name="deliveryType" value="Hardcopy Delivery">
+                                <div class="rc-content">
+                                    <strong>Hardcopy Delivery</strong>
+                                    <p class="text-small">Meetup for printed docs</p>
+                                </div>
+                            </label>
+                            <label class="radio-card hover-float">
+                                <input type="radio" name="deliveryType" value="Both">
+                                <div class="rc-content">
+                                    <strong>Both</strong>
+                                    <p class="text-small">Softcopy and hardcopy</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="locationGroup" style="display: none;">
+                        <label>Preferred Meetup Location <span class="text-red">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="meetupLocation" placeholder="Enter preferred location in Ogbomoso or nearest park">
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-4" id="contactGroup">
+                        <label>Preferred Contact Method <span class="text-red">*</span></label>
+                        <div class="checkbox-group">
+                            <label class="custom-checkbox hover-float"><input type="checkbox" name="contactMethod" value="WhatsApp" class="contact-cb"> <i class="fab fa-whatsapp text-green"></i> WhatsApp</label>
+                            <label class="custom-checkbox hover-float"><input type="checkbox" name="contactMethod" value="Phone Call" class="contact-cb"> <i class="fas fa-phone-alt text-green"></i> Phone Call</label>
+                            <label class="custom-checkbox hover-float"><input type="checkbox" name="contactMethod" value="Email" class="contact-cb"> <i class="far fa-envelope text-green"></i> Email</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 hover-float" style="font-size: 1.1rem; padding: 15px;"><i class="far fa-paper-plane"></i> Submit Request</button>
+                    <p class="text-center text-small mt-3"><i class="fas fa-lock text-green"></i> Your information is safe with us and will never be shared.</p>
+                </form>
+            </div>
+
+            <div class="sidebar-container">
+                <div class="card mb-4">
+                    <span class="text-green uppercase font-bold text-small">HOW IT WORKS</span>
+                    <h3 class="mb-3">Simple 3 Steps</h3>
+                    <div class="mini-steps vertical">
+                        <div class="m-step hover-float">
+                            <div class="m-icon bg-light-green"><i class="fas fa-edit text-green"></i></div>
+                            <div><strong>1. Submit Request</strong><p class="text-small">Fill out the form with details.</p></div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="m-step hover-float">
+                            <div class="m-icon bg-light-green"><i class="fas fa-cog text-green"></i></div>
+                            <div><strong>2. We Process It</strong><p class="text-small">We review and process quickly.</p></div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="m-step hover-float">
+                            <div class="m-icon bg-light-green"><i class="fas fa-comment-dots text-green"></i></div>
+                            <div><strong>3. Receive Files</strong><p class="text-small">Get your files via WhatsApp/Email.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-card hover-float" style="padding-bottom: 160px;">
+                    <div class="cta-content" style="padding-right: 0;">
+                        <p class="text-small">NEED HELP?</p>
+                        <h3>Chat with us on WhatsApp!</h3>
+                        <p>We're just a message away.</p>
+                        <a href="https://wa.me/2348055755066" target="_blank" rel="noopener" class="btn btn-yellow wa-link mt-2"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </div>
+                    <img src="images/hand-phone.webp" alt="Phone in hand" class="cta-img" style="width: 150px; bottom: -10px; right: -10px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding pt-0">
+        <div class="features-banner hover-float">
+            <div class="f-item"><i class="fas fa-shield-alt icon-large text-green"></i><div><strong>Secure & Confidential</strong><p class="text-small">Your info is protected.</p></div></div>
+            <div class="f-item"><i class="fas fa-bolt icon-large text-yellow"></i><div><strong>Fast Processing</strong><p class="text-small">Completed within minutes.</p></div></div>
+            <div class="f-item"><i class="fas fa-globe icon-large text-green"></i><div><strong>Fully Online</strong><p class="text-small">Submit from anywhere.</p></div></div>
+            <div class="f-item"><i class="fas fa-headset icon-large text-yellow"></i><div><strong>Support Every Day</strong><p class="text-small">We are available daily.</p></div></div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.webp" alt="Logo" class="footer-logo">
+                <p>Your trusted online cybercafe for fast, reliable and secure digital services. 100% Online. Fast. Reliable.</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/2348055755066" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow on Instagram" aria-label="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow on Facebook" aria-label="Follow on Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="index.html#home">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="index.html#services">Services</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="index.html#how-it-works">How It Works</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="service-details.html">Service Details</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="request-service.html">Request a Service</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="service-details.html">Education Services</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="service-details.html">NYSC Services</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="service-details.html">Document & Printing</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="service-details.html">Identity & Govt.</a></li>
+                    <li><i class="fas fa-chevron-right text-yellow"></i> <a href="service-details.html">Utility & Subscriptions</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>We're Online!</h4>
+                <p>Mon - Sun: 6:00AM - 10:00PM<br>Chat with us on WhatsApp anytime.</p>
+                <a href="https://wa.me/2348055755066" target="_blank" rel="noopener" class="btn btn-outline-white wa-link">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EmmaTest Cybercafe. All rights reserved.</p>
+            <p>Fast Online Services. Anywhere. Anytime.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
