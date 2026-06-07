@@ -123,7 +123,7 @@ const form = document.getElementById('serviceForm');
 const servicesMap = {
     education: ["WAEC Result Checking", "NECO Result Checking", "JAMB Result Printing", "JAMB Admission Letter", "Post-UTME Registration", "School Applications", "Transcript Assistance", "Course Registration"],
     nysc: ["NYSC Call-Up Letter", "Green Card Printing", "NYSC Portal Assistance", "Relocation Printing", "SAED Registration", "Senate List Checking"],
-    document: ["Typing & Formatting", "Photocopying", "Scanning to PDF", "Colored Document Printing", "Passport Printing", "CV/Resume Formatting", "Online Document Submission"],
+    document: ["Typing & Formatting", "Photocopying", "Scanning to PDF", "Colored Document Printing", "Passport Printing & Photography", "CV/Resume Formatting", "Online Document Submission"],
     identity: ["NIN Slip Printing", "BVN Assistance", "Government Portal Assistance", "TIN Registration Help", "Online Application Assistance"],
     utility: ["Electricity Bills", "Cable TV Subscription", "Airtime Recharge", "Data Bundles", "Betting Wallet Funding", "Internet Subscription"],
     additional: ["Email Creation", "Passport Photo Editing", "Online Registrations", "Exam Registrations", "General Online Assistance", "Other (specify in description)"]
