@@ -214,8 +214,16 @@ if(form) {
         }
         
         if (!isValid) {
-            alert('Please fill out all required fields marked with a red star (*).');
-            return;
+            const toast = document.getElementById('customToast');
+            
+            toast.classList.add('show');
+            
+            // Wait 4 seconds, then remove the class to slide it back out
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+            
+            return; // Stop the form from submitting
         }
 
         const name = document.getElementById('fullName').value;
