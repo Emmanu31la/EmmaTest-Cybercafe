@@ -334,8 +334,16 @@ ${filesText}
                 if(fileNameDisplay) fileNameDisplay.textContent = "";
                 locationGroup.style.display = 'none';
                 
-                // Redirect current tab to WhatsApp
-                window.location.href = waLink;
+                // Trigger the Success Toast
+                const successToast = document.getElementById('successToast');
+                successToast.classList.add('show');
+                
+                // Wait 2.5 seconds for the user to read the message, then redirect to WhatsApp
+                setTimeout(() => {
+                    successToast.classList.remove('show');
+                    window.location.href = waLink;
+                }, 2500);
+
             } else {
                 alert("Email Server Error: " + jsonResponse.message);
             }

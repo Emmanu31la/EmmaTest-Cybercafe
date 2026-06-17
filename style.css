@@ -760,3 +760,12 @@ body.dark-theme .custom-toast {
     border: 1px solid #333333;
     border-left: 5px solid #dc3545;
 }
+
+/* --- Success Toast Modifier --- */
+.success-toast {
+    border-left: 5px solid var(--primary-green);
+}
+
+body.dark-theme .success-toast {
+    border-left: 5px solid var(--primary-green);
+}
