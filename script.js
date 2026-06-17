@@ -114,8 +114,6 @@ themeToggleBtn.addEventListener('click', () => {
 });
 
 
-// --- FORM LOGIC --- //
-
 const serviceCategory = document.getElementById('serviceCategory');
 const serviceType = document.getElementById('serviceType');
 const form = document.getElementById('serviceForm');
@@ -126,7 +124,8 @@ const servicesMap = {
     document: ["Typing & Formatting", "Photocopying", "Scanning to PDF", "Colored Document Printing", "Passport Printing & Photography", "CV/Resume Formatting", "Online Document Submission"],
     identity: ["NIN Slip Printing", "BVN Assistance", "Government Portal Assistance", "TIN Registration Help", "Online Application Assistance"],
     utility: ["Electricity Bills", "Cable TV Subscription", "Airtime Recharge", "Data Bundles", "Betting Wallet Funding", "Internet Subscription"],
-    additional: ["Email Creation", "Passport Photo Editing", "Online Registrations", "Exam Registrations", "General Online Assistance", "Other (specify in description)"]
+    additional: ["Email Creation", "Passport Photo Editing", "Online Registrations", "Exam Registrations", "Account Recovery Assistance", "General Online Assistance"],
+    forex: ["MT4 / MT5 Setup", "Broker Account Assistance", "Demo Account Setup", "VPS Configuration", "Trading Tools Installation", "Market Calendar Setup", "Risk Calculator Setup", "Learning Resources", "Expert Advisor (AI)"]
 };
 
 if (serviceCategory && serviceType) {
@@ -215,10 +214,7 @@ if(form) {
         
         if (!isValid) {
             const toast = document.getElementById('customToast');
-            
             toast.classList.add('show');
-            
-            // Wait 4 seconds, then remove the class to slide it back out
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 5000);
