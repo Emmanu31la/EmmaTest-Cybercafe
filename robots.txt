@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmanu31la.github.io/EmmaTest-Cybercafe/sitemap.xml
